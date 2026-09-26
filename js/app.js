@@ -47,7 +47,7 @@ function renderQR(){const box=document.getElementById("qrBox");box.innerHTML=db.
 function updateBadge(){const n=db.donationNotices.filter(x=>x.status!=="Approved").length;const b=document.getElementById("noticeBadge");if(b)b.textContent=n}
 function openAdmin(){document.getElementById("adminModal").classList.remove("hidden");if(sessionStorage.getItem("rf_admin")==="1")showAdmin()}
 function closeAdmin(){document.getElementById("adminModal").classList.add("hidden")}
-document.getElementById("loginForm").addEventListener("submit",e=>{e.preventDefault();let u=document.getElementById("adminUser").value.trim(),p=document.getElementById("adminPass").value;if(u==="admin"&&p==="Admin@123"){sessionStorage.setItem("rf_admin","1");showAdmin()}else document.getElementById("loginMsg").textContent="Username અથવા password ખોટો છે."})
+document.getElementById("loginForm").addEventListener("submit",e=>{e.preventDefault();let u=document.getElementById("adminUser").value.trim(),p=document.getElementById("adminPass").value;if(u==="Radhe"&&p==="Krishna@11"){sessionStorage.setItem("rf_admin","1");showAdmin()}else document.getElementById("loginMsg").textContent="Username અથવા password ખોટો છે."})
 function showAdmin(){document.getElementById("loginView").classList.add("hidden");document.getElementById("adminView").classList.remove("hidden");renderAdmin()}
 function logout(){sessionStorage.removeItem("rf_admin");document.getElementById("adminView").classList.add("hidden");document.getElementById("loginView").classList.remove("hidden")}
 function showTab(name){document.querySelectorAll(".admin-tab").forEach(x=>x.classList.add("hidden"));document.getElementById("tab-"+name).classList.remove("hidden")}
